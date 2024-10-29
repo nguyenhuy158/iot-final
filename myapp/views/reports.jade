@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    style.
+        .container-fluid.main-bg {
+            background: url('/images/system.png') no-repeat center center fixed;
+        }
+    .container-fluid.main-bg
+        .row
+            // Sidebar
+            .col-md-2.sidebar
+                .text-center.mb-4
+                    img.rounded-circle.bg-white.p-2(src="https://ut.edu.vn/themes/ut/images/logo.png" alt="Logo")
+                nav.nav.flex-column
+                    a.nav-link(href="/") Dashboard
+                    a.nav-link(href="/monitor") Monitoring
+                    a.nav-link.active(href="/reports") Reports
+                    a.nav-link(href="/control") Control
+                    a.nav-link(href="/settings") Settings
+                    a.nav-link(href="/help") Help
+                    a.nav-link(href="/logout") Logout
+            
+            // Main Content
+            .col-md-10.main-content
+                h1.text-center.mb-4 Environmental Monitoring System Reports
+                
+                p Here you can find detailed reports on environmental data collected by the system.
+                
+                h2 Air Quality Reports
+                p Detailed air quality data including PM2.5, PM10, CO2 levels, etc.
+                
+                h2 Water Quality Reports
+                p Detailed water quality data including pH levels, turbidity, etc.
+                
+                h2 Historical Data
+                p Access historical data and trends for both air and water quality.

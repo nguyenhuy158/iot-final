@@ -22,40 +22,51 @@ block content
             
             // Main Content
             .col-md-10.main-content
-                h1.text-center.mb-4 Environmental Monitoring System
+                h1.text-center.mb-4 Environmental Monitoring System Help
                 
-                .city-bg
-                    h2 Real-time City Monitoring
+                p Welcome to the help page. This system monitors environmental data such as air quality, water quality, and provides real-time data for each category.
                 
+                h2 Usage Instructions
+                ol
+                    li Follow the Dashboard for an overview of all monitoring data.
+                    li Use the Monitoring tab for detailed sensor data including air and water quality parameters.
+                    li The Reports section allows you to generate, view, and download historical environmental data.
+                    li Use the Control tab to adjust settings for the monitoring sensors or other control elements in the system.
+                    li Customize system settings under Settings.
+                    li Access additional help or contact support via this Help section.
+
+                h2 Real-Time Data Monitoring
                 .row.g-4
                     .col-md-3
                         .card
                             .card-body.text-center
                                 .monitoring-icon.bg-primary.mx-auto.mb-3 PM2.5
                                 h5 Air Quality
-                                p.mb-0 35 µg/m³
-                    
+                                p.mb-0 Current PM2.5 level
                     .col-md-3
                         .card
                             .card-body.text-center
                                 .monitoring-icon.bg-success.mx-auto.mb-3 CO2
                                 h5 Carbon Dioxide
-                                p.mb-0 412 ppm
-                    
+                                p.mb-0 Current CO2 level
                     .col-md-3
                         .card
                             .card-body.text-center
                                 .monitoring-icon.bg-warning.mx-auto.mb-3 NO2
                                 h5 Nitrogen Dioxide
-                                p.mb-0 21 ppb
-                    
+                                p.mb-0 Current NO2 level
                     .col-md-3
                         .card
                             .card-body.text-center
                                 .monitoring-icon.bg-danger.mx-auto.mb-3 O3
                                 h5 Ozone
-                                p.mb-0 48 ppb
-
+                                p.mb-0 Current Ozone level
+                            
                 .row.g-4 
                     .col.text-center
-                        img(src="/images/system.png", alt="")
+                        img(src="/images/system.png", alt="System Overview Image")
+                
+                h2 Troubleshooting
+                p If you encounter issues, verify your network connection and sensor configurations. Check the Monitoring and Control sections to ensure all sensors are operating correctly.
+                
+                p For additional assistance, contact the system administrator at support@example.com.

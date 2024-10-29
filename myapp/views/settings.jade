@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .container.mt-5
+        .row
+            .col-md-3.sidebar
+                .text-center.mb-4
+                    img.rounded-circle.bg-white.p-2(src="https://ut.edu.vn/themes/ut/images/logo.png" alt="Logo")
+                nav.nav.flex-column
+                    a.nav-link(href="/") Dashboard
+                    a.nav-link(href="/monitor") Monitoring
+                    a.nav-link(href="/reports") Reports
+                    a.nav-link(href="/control") Control
+                    a.nav-link.active(href="/settings") Settings
+                    a.nav-link(href="/help") Help
+                    a.nav-link(href="/logout") Logout
+            
+            .col-md-9.main-content
+                h1.text-center.mb-4 Settings
+                
+                h2 User Settings
+                p Manage your user account settings.
+                
+                h2 System Settings
+                p Configure system-wide settings for the environmental monitoring system.
+                
+                h2 Notification Settings
+                p Set up notifications for various system events.
+                
+                h2 Data Settings
+                p Manage data storage and retention policies.
