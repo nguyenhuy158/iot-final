@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    style.
+      .control-panel, .pump-control {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .control-panel button, .pump-control button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .display-panel {
+        text-align: center;
+      }
+    
+    .container-fluid
+      .row
+        .col-md-3.control-panel
+          h4.text-center CONTROL PANEL
+          button.btn.btn-success AUTO
+          button.btn.btn-danger MANUAL
+          button.btn.btn-primary START
+          button.btn.btn-warning STOP
+          button.btn.btn-secondary RESET
+          
+          h5.mt-3 Set Pressure
+          div PV: span 0.00 (Bar)
+          div CV: span 0.00 (Bar)
+
+          h5.mt-3 Pump Timer
+          .form-group
+            label(for="pump-timer") Từ
+            input#pump-timer.form-control(type="number", placeholder="Giờ / Phút")
+
+        .col-md-6.display-panel
+          h2 GIAO DIỆN ĐIỀU KHIỂN BƠM XẢ
+          .row
+            .col-6
+              .card
+                .card-body
+                  h5.card-title Auto
+                  p.card-text Frequency: span 0.00 Hz
+                  p.card-text Current: span 0.00
+            .col-6
+              .card
+                .card-body
+                  h5.card-title Manual
+
+          img.img-fluid.mt-3(src="/images/pump_image.png", alt="Pump Diagram")
+
+        .col-md-3.pump-control
+          h5 Pressure Sensor
+          button.btn.btn-info Set Pressure
+          button.btn.btn-secondary Actual Pressure
+          
+          h5.mt-3 Water Container
+          button.btn.btn-info Pump
+          button.btn.btn-info Valve
+          
+          h5.mt-3 Environment
+          img.img-fluid(src="/images/environment_image.png", alt="Environment")

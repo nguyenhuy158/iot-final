@@ -1,0 +1,167 @@
+extends layout
+
+block content
+    style.
+        .dashboard-container {
+            background: #1a1a1a;
+            min-height: 100vh;
+            color: white;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+        .measurement-value {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .measurement-unit {
+            display: flex;
+            flex-direction: column;
+        }
+        .bg-pink {
+            background: #ff69b4;
+        }
+        .bg-orange {
+            background: #ff7f50;
+        }
+        .bg-teal {
+            background: #008080;
+        }
+        .table {
+            margin-bottom: 0;
+        }
+        .table th, .table td {
+            padding: 0.75rem;
+            vertical-align: middle;
+        }
+    .dashboard-container.p-3
+        h2.text-center.text-white.mb-4 MONITORING DASHBOARD
+        
+        // First row of measurements
+        .row.g-3.mb-3
+            .col
+                .card.bg-warning
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.measurement-icon 🌡️
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark °C
+                                span.badge.bg-secondary.ms-1 KK
+            .col
+                .card.bg-info.text-white
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.measurement-icon 💧
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark %
+                                span.badge.bg-secondary.ms-1 KK
+            .col
+                .card.bg-success.text-white
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.measurement-icon 🌫️
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark µg/m³
+                                span.badge.bg-secondary.ms-1 KK
+            .col
+                .card.bg-danger.text-white
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.measurement-icon ⚡
+                            .measurement-value.display-4 NIL
+                            .measurement-unit
+                                span.badge.bg-dark ppm
+                                span.badge.bg-secondary.ms-1 KK
+            .col
+                .card.bg-warning
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.measurement-icon 🌪️
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark ppm
+                                span.badge.bg-secondary.ms-1 KK
+
+        // Second row of measurements
+        .row.g-3.mb-4
+            .col
+                .card.bg-pink
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.fw-bold PH
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-secondary NC
+            .col
+                .card.bg-orange
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.fw-bold DO
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark °C
+                                span.badge.bg-secondary.ms-1 NC
+            .col
+                .card.bg-primary.text-white
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.fw-bold TSS
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark mg/L
+                                span.badge.bg-secondary.ms-1 NC
+            .col
+                .card.bg-teal.text-white
+                    .card-body.text-center
+                        .d-flex.align-items-center.justify-content-between
+                            span.fw-bold TDS
+                            .measurement-value.display-4 0.00
+                            .measurement-unit
+                                span.badge.bg-dark NTU
+                                span.badge.bg-secondary.ms-1 NC
+
+        // Date range and export section
+        .row.mb-4
+            .col-md-6
+                .card.bg-dark.text-white
+                    .card-body
+                        .mb-3
+                            label.form-label(for="startDate") From:
+                            input#startDate.form-control(type="date")
+                        .mb-3
+                            label.form-label(for="endDate") To:
+                            input#endDate.form-control(type="date")
+            .col-md-6.d-flex.align-items-center
+                button.btn.btn-primary.me-2
+                    i.fas.fa-file-excel.me-2
+                    | Export to Excel
+                button.btn.btn-success
+                    i.fas.fa-search.me-2
+                    | Search
+
+        // Data table
+        .card.bg-dark.text-white
+            .card-body
+                .table-responsive
+                    table.table.table-dark.table-striped
+                        thead
+                            tr
+                                th Time
+                                th Temperature
+                                th Humidity
+                                th PM(2.5)
+                                th NH3
+                                th CO2
+                                th PH
+                                th DO
+                                th TSS
+                                th TDS
+                        tbody
+                            tr
+                                td(colspan="10") No data available
+
+    

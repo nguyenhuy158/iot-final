@@ -1,5 +1,61 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    style.
+        .container-fluid.main-bg {
+            background: url('/images/system.png') no-repeat center center fixed;
+        }
+    .container-fluid.main-bg
+        .row
+            // Sidebar
+            .col-md-2.sidebar
+                .text-center.mb-4
+                    img.rounded-circle.bg-white.p-2(src="https://ut.edu.vn/themes/ut/images/logo.png" alt="Logo")
+                nav.nav.flex-column
+                    a.nav-link.active(href="#") Dashboard
+                    a.nav-link(href="/monitor") Monitoring
+                    a.nav-link(href="/reports") Reports
+                    a.nav-link(href="/control") Control
+                    a.nav-link(href="/settings") Settings
+                    a.nav-link(href="/help") Help
+                    a.nav-link(href="/logout") Logout
+            
+            // Main Content
+            .col-md-10.main-content
+                h1.text-center.mb-4 Environmental Monitoring System
+                
+                .city-bg
+                    h2 Real-time City Monitoring
+                
+                .row.g-4
+                    .col-md-3
+                        .card
+                            .card-body.text-center
+                                .monitoring-icon.bg-primary.mx-auto.mb-3 PM2.5
+                                h5 Air Quality
+                                p.mb-0 35 µg/m³
+                    
+                    .col-md-3
+                        .card
+                            .card-body.text-center
+                                .monitoring-icon.bg-success.mx-auto.mb-3 CO2
+                                h5 Carbon Dioxide
+                                p.mb-0 412 ppm
+                    
+                    .col-md-3
+                        .card
+                            .card-body.text-center
+                                .monitoring-icon.bg-warning.mx-auto.mb-3 NO2
+                                h5 Nitrogen Dioxide
+                                p.mb-0 21 ppb
+                    
+                    .col-md-3
+                        .card
+                            .card-body.text-center
+                                .monitoring-icon.bg-danger.mx-auto.mb-3 O3
+                                h5 Ozone
+                                p.mb-0 48 ppb
+
+                .row.g-4 
+                    .col.text-center
+                        img(src="/images/system.png", alt="")

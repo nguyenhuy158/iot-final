@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "farmnet_service",
+            "driver": "PostgreSQL",
+            "name": "farmnet",
+            "password": "farmnet",
+            "port": 6000,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "farmnet_service"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "nodejs",
+            "password": "123456",
+            "database": "nodejs",
+            "username": "root"
+        }
+    ]
+}

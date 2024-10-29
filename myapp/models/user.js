@@ -3,6 +3,11 @@ const {
   Sequelize, Model, DataTypes
 } = require('sequelize');
 
+var express = require('express');
+var bodyParser = require('body-parser');
+var bcrypt = require('bcrypt');
+var session = require('express-session');
+
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -19,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
+    username: DataTypes.STRING,
     password: DataTypes.STRING,
   }, {
     sequelize,
@@ -34,6 +40,20 @@ module.exports = (sequelize, DataTypes) => {
   sequelize.sync()
   .then(() => {
     console.log('User table has been created, if one didn\'t exist');
+
+    // Create admin user if it doesn't exist
+    // admin / admin
+    // User.destroy({ where: { email: 'admin' } });
+    const password = bcrypt.hashSync('admin', 10);
+    User.findOrCreate({
+      where: { email: 'admin' },
+      defaults: {
+        firstName: 'Admin',
+        lastName: 'Admin User',
+        username: 'admin',
+        password: password,
+      }
+    });
   })
   .catch(error => {
     console.error('Unable to create table : ', error);

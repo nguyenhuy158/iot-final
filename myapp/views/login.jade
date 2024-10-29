@@ -1,14 +1,15 @@
-doctype html
-html
-  head
-    title Login
-  body
-    h1 Login
-    form(action="/login" method="post")
-      label(for="username") Username:
-      input(type="text" name="username" required)
-      br
-      label(for="password") Password:
-      input(type="password" name="password" required)
-      br
-      button(type="submit") Login
+extends layout
+
+block content
+  h1 Login
+  form#loginForm(action="/login" method="post" class="form-signin" onsubmit="handleLogin(event)")
+    .form-group
+      label(for="username" class="sr-only") Username:
+      input(type="text" name="username" class="form-control" placeholder="Username" required autofocus)
+    .form-group
+      label(for="password" class="sr-only") Password:
+      input(type="password" name="password" class="form-control" placeholder="Password" required)
+    #alertContainer
+    button(type="submit" class="btn btn-lg btn-primary btn-block") Login
+  
+  script(src="/javascripts/login.js")  
